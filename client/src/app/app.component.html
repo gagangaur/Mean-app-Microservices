@@ -1,0 +1,55 @@
+<div align="center" style="margin-top: 3em;font-size: larger;">
+  <input type="text" [(ngModel)]="title" style="height: 1.5em;">
+  <button (click)="getData()">Search For Title</button>
+  <br>
+  <br>
+  <br>
+  <h2 *ngIf="!isAvailable"> No Title Available</h2>
+  <div *ngIf="isAvailable">
+    <table style="border: 2px solid;width: 50%; font-size: large;">
+      <thead>
+        <td>Id</td>
+        <td>Title</td>
+        <td>ISBN</td>
+        <td>Category</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of array">
+          <td>{{item._id}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.isbn}}</td>
+          <td>{{item.category}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre>{{ arr | json }}</pre>
+  </div>
+  <div>
+    <!-- <pre>{{ allBooks | json }}</pre> -->
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>ISBN</th>
+          <th>Rating</th>
+          <th>Category</th>
+          <th>Add to Cart</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of allBooks">
+          <td>{{book.id}}</td>
+          <td>{{book.title}}</td>
+          <td>{{book.isbn}}</td>
+          <td>{{book.rating}}</td>
+          <td>{{book.category}}</td>
+          <td><button class="btn" (click)="addToCart(book.id)">Add to Cart</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- Unlocking Android -->

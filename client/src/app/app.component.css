@@ -1,0 +1,13 @@
+td {
+  border: 2px solid;
+  font-size: large;
+  border-collapse: collapse;
+}
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 60%;
+}
+.btn {
+  height: 2.5em;
+}
